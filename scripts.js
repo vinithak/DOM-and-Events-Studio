@@ -15,7 +15,8 @@ function init(){
     const left = document.getElementById("left");
     const right = document.getElementById("right");
     const rocket = document.getElementById("rocket");
-
+    rocket.style.left = 225 + 'px';
+    rocket.style.top = 30 + 'px';
 
     takeoff.addEventListener("click", function(event){
         
@@ -40,6 +41,8 @@ function init(){
         flightStatus.innerHTML = "The shuttle has landed.";
         shuttleBackground.style.backgroundColor = "green";
         spaceShuttleHeight.innerHTML = 0;
+        rocket.style.left = 225 + 'px';
+        rocket.style.top = 30 + 'px';
     });
 
     missionAbort.addEventListener("click", function(event){
@@ -48,6 +51,8 @@ function init(){
             flightStatus.innerHTML = "Mission aborted.";
             shuttleBackground.style.backgroundColor = "green";
             spaceShuttleHeight.innerHTML = 0;
+            rocket.style.left = 225 + 'px';
+            rocket.style.top = 30 + 'px';
         }
         else{
             alert("Cancelling Abort");
@@ -56,6 +61,7 @@ function init(){
     });
 
     up.addEventListener("click", function(){
+
         rocket.style.top = (parseInt( rocket.style.top) - 10) + "px";
         spaceShuttleHeight.innerHTML = parseInt(spaceShuttleHeight.innerHTML) + 10000;
 
@@ -66,12 +72,11 @@ function init(){
 
     });
     left.addEventListener("click", function(){
-        //rocket.style.left = (parseInt( rocket.style.top) - 10) + "px";
-        rocket.style.left = (parseInt( rocket.style.left) - 10);
+        rocket.style.left = (parseInt( rocket.style.left) - 10) + "px";
 
     });
     right.addEventListener("click", function(){
-        rocket.style.left = (parseInt( rocket.style.left) + 10) + "px";
+        rocket.style.left = (parseInt(rocket.style.left) + 10) + "px";
 
     });
 
